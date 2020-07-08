@@ -78,7 +78,7 @@ const LawyersCards = () => {
             </div>
             <div className="col-3 lawyer-item">
                    <div className="lawyer-card-header row">
-                    <div className="image-container w-50">
+                    <div className="image-container">
                     <img src={image} className="rounded-circle" width='70px' height='70px'/>
                     </div>
                     <div className="layer-details">
