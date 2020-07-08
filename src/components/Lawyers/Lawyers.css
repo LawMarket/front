@@ -1,0 +1,44 @@
+.lawyers-title{
+    margin-bottom: 50px;
+    margin-top: 25px;
+}
+
+.lawyer-skils_ul{
+    text-align: right;
+}
+
+.lawyer-details_ul{
+    padding: 0;
+    text-align: right;
+    list-style: none;
+}
+.lawyer-item{
+    padding-bottom: 2rem;
+    padding-top: 2rem;
+}
+.lawyer-know{
+    font-size: small;
+}
+.lawyer-price{
+    font-size: small;
+}
+
+.lawyer-skils_ul li {
+    font-size: small;
+}
+
+
+.layers-card-container{
+    padding: 20px;
+    background-color:#f8f8f8;
+}
+
+
+@media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+    .lawyer-skils_ul{
+        padding-inline-start: 0;
+        text-align: right;
+    }
+    
+  }
