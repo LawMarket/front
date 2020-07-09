@@ -12,7 +12,7 @@ const Navbar = () => {
       >
         <span className="navbar-toggler-icon"></span>
       </button>
-      <div className="collapse navbar-collapse second-nav" id="collapsibleNavbar">
+      <div className="collapse navbar-collapse justify-content-center" id="collapsibleNavbar">
         <ul className="navbar-nav">
           <li className="nav-item dropdown">
             <a className="nav-link dropdown-toggle" data-toggle="dropdown" href="#">

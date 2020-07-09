@@ -32,9 +32,9 @@ const LawyersCards = () => {
         <div className="container-fluid layers-card-container" >
             <h3 className="text-center lawyers-title">עורכי הדין שלנו</h3>
             <div className="cards-container row justify-content-center">
-            <div className="col-3 lawyer-item">
+            <div className="col-2 lawyer-item">
                 <div className="lawyer-card-header row">
-                    <div className="image-container w-50">
+                    <div className="image-container">
                         <img src={image} className="rounded-circle" width='70px' height='70px'/>
                     </div>
                     <div className="layer-details">
@@ -54,9 +54,9 @@ const LawyersCards = () => {
                 </div>
                 <a href="#"> עוד</a>
             </div>
-            <div className="col-3 lawyer-item">
+            <div className="col-2 lawyer-item">
             <div className="lawyer-card-header row">
-                    <div className="image-container w-50">
+                    <div className="image-container">
                     <img src={image} className="rounded-circle" width='70px' height='70px'/>
                     </div>
                     <div className="layer-details">
@@ -76,7 +76,7 @@ const LawyersCards = () => {
                 </div>
                 <a href="#"> עוד</a>
             </div>
-            <div className="col-3 lawyer-item">
+            <div className="col-2 lawyer-item">
                    <div className="lawyer-card-header row">
                     <div className="image-container">
                     <img src={image} className="rounded-circle" width='70px' height='70px'/>
