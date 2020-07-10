@@ -12,10 +12,10 @@ const Navbar = () => {
       >
         <span className="navbar-toggler-icon"></span>
       </button>
-      <div className="collapse navbar-collapse justify-content-center" id="collapsibleNavbar">
+      <div className=" justify-content-center">
         <ul className="navbar-nav">
           <li className="nav-item dropdown">
-            <a className="nav-link dropdown-toggle" data-toggle="dropdown" href="#">
+            <a  data-toggle="dropdown" href="#">
               דיני נזיקין
             </a>
             <div className="dropdown-menu">
@@ -31,7 +31,7 @@ const Navbar = () => {
             </div>
           </li>
           <li className="nav-item dropdown">
-            <a className="nav-link dropdown-toggle" data-toggle="dropdown" href="#">
+            <a data-toggle="dropdown" href="#">
               דיני משפחה
             </a>
             <div className="dropdown-menu">
@@ -47,7 +47,7 @@ const Navbar = () => {
             </div>
           </li>
           <li className="nav-item dropdown">
-            <a className="nav-link dropdown-toggle" data-toggle="dropdown" href="#">
+            <a data-toggle="dropdown" href="#">
               דיני עבודה
             </a>
             <div className="dropdown-menu">
@@ -63,7 +63,7 @@ const Navbar = () => {
             </div>
           </li>
           <li className="nav-item dropdown">
-            <a className="nav-link dropdown-toggle" data-toggle="dropdown" href="#">
+            <a data-toggle="dropdown" href="#">
               דיני תעבורה
             </a>
             <div className="dropdown-menu">
@@ -79,7 +79,7 @@ const Navbar = () => {
             </div>
           </li>
           <li className="nav-item dropdown">
-            <a className="nav-link dropdown-toggle" data-toggle="dropdown" href="#">
+            <a data-toggle="dropdown" href="#">
               מקרקעין נדל״ן
             </a>
             <div className="dropdown-menu">
@@ -95,7 +95,7 @@ const Navbar = () => {
             </div>
           </li>
           <li className="nav-item dropdown">
-            <a className="nav-link dropdown-toggle" data-toggle="dropdown" href="#">
+            <a data-toggle="dropdown" href="#">
               הוצאה לפועל
             </a>
             <div className="dropdown-menu">

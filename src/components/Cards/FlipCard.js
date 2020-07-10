@@ -19,7 +19,7 @@ const FlipCard = () => {
                 style={{ width: "300px", height: "300px" }}
               />
               <div className="test1">
-                <h4 className="test1"  style={{ color: "#fff" }}>
+                <h4 style={{ color: "#fff" }}>
                 {" "}
                   הסכמים
                 </h4>
@@ -116,7 +116,7 @@ const FlipCard = () => {
                 style={{ width: "300px", height: "300px" }}
               />
               <div className="test1">
-                <h4 className="test1"  style={{ color: "#fff" }}>
+                <h4 style={{ color: "#fff" }}>
                   הסכמים
                 </h4>
               </div>
@@ -167,7 +167,7 @@ const FlipCard = () => {
                 style={{ width: "300px", height: "300px" }}
                 />
               <div className="test1">
-                <h4 className="test1"  style={{ color: "#fff" }}>
+                <h4 style={{ color: "#fff" }}>
                   הסכמים
                 </h4>
               </div>
@@ -215,7 +215,7 @@ const FlipCard = () => {
                 style={{ width: "300px", height: "300px" }}
                 />
               <div className="test1">
-                <h4 className="test1"  style={{ color: "#fff" }}>
+                <h4  style={{ color: "#fff" }}>
                   הסכמים
                 </h4>
               </div>
@@ -263,7 +263,7 @@ const FlipCard = () => {
                 style={{ width: "300px", height: "300px" }}
                 />
               <div className="test1">
-                <h4 className="test1"  style={{ color: "#fff" }}>
+                <h4 style={{ color: "#fff" }}>
                   הסכמים
                 </h4>
               </div>
@@ -314,7 +314,7 @@ const FlipCard = () => {
                 style={{ width: "300px", height: "300px" }}
                 />
               <div className="test1">
-                <h4 className="test1"  style={{ color: "#fff" }}>
+                <h4 style={{ color: "#fff" }}>
                   הסכמים
                 </h4>
               </div>
@@ -362,7 +362,7 @@ const FlipCard = () => {
                 style={{ width: "300px", height: "300px" }}
                 />
               <div className="test1">
-                <h4 className="test1"  style={{ color: "#fff" }}>
+                <h4 style={{ color: "#fff" }}>
                   הסכמים
                 </h4>
               </div>
@@ -410,7 +410,7 @@ const FlipCard = () => {
                 style={{ width: "300px", height: "300px" }}
                 />
               <div className="test1">
-                <h4 className="test1"  style={{ color: "#fff" }}>
+                <h4 style={{ color: "#fff" }}>
                   הסכמים
                 </h4>
               </div>
