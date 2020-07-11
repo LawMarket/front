@@ -36,14 +36,6 @@
     transition: transform 0.9s;
     transform-style: preserve-3d;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-    &:hover {
-      .test{
-        display: none;
-      }
-      .test1{
-        display: none;
-      }
-    }
   }
   
   .flip-card:hover .flip-card-inner {
@@ -61,6 +53,7 @@
   .flip-card-front {
     background-color: #bbb;
     color: black;
+    overflow: hidden;
   }
   
   .flip-card-back {
