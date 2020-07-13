@@ -1,7 +1,8 @@
 import React from 'react';
 import image from './userpic.jpeg';
-import Rating from '../generl/Rating';
+import Rating from '../general/Rating';
 import LawyerSkils from './LawyerSkils';
+import pic from '../Cards/product.jpg';
 
 
 const LawyerItem = () => {
@@ -11,7 +12,7 @@ const LawyerItem = () => {
             <div className="col-md-4">
     		    <div className="card profile-card-2">
                     <div className="card-img-block">
-                        <img className="img-fluid" src="https://images.pexels.com/photos/877695/pexels-photo-877695.jpeg?auto=compress&cs=tinysrgb&h=350" alt="Card image cap" />
+                        <img className="img-fluid" src={pic} alt="Card image cap" />
                     </div>
                     
                     <div className="card-body">

@@ -4,16 +4,16 @@ import './Layout.css';
 const Navbar = () => {
   return (
     <nav className="navbar navbar-expand-sm d-flex justify-content-center">
-      <button
+     {/*  <button
         className="navbar-toggler"
         type="button"
         data-toggle="collapse"
         data-target="#collapsibleNavbar"
       >
         <span className="navbar-toggler-icon"></span>
-      </button>
+      </button> */}
       <div className=" justify-content-center">
-        <ul className="navbar-nav">
+        <ul className="navbar-nav nav-class">
           <li className="nav-item dropdown">
             <a  data-toggle="dropdown" href="#">
               דיני נזיקין
