@@ -7,7 +7,7 @@ import pic from '../Cards/product.jpg';
 
 const LawyerItem = () => {
     return (
-        <div className="container">
+        <div className="container mb-3 mt-3">
         <div className="row" >
             <div className="col-md-4">
     		    <div className="card profile-card-2">
@@ -55,7 +55,7 @@ const LawyerItem = () => {
                         <div className=" " style={{marginLeft: '.8rem'}}>10 ימי עסקים</div>
                         </div>
                     </div>
-                    <div className="d-flex justify-content-between p-5" >
+                    <div className="d-flex justify-content-between p-3" >
                     <button type="button" className="btn btn-primary" style={{borderColor: 'rgb(8, 185, 227)',backgroundColor:'rgb(8, 185, 227)'}}>צור קשר</button>
                     <button type="button" className="btn btn-outline-primary offer-btn" style={{color: 'rgb(8, 185, 227)',borderColor:'rgb(8, 185, 227)'}}>לקבלת הצעה</button>
                     </div>

@@ -1,12 +1,16 @@
 import React from "react";
+import { Link } from "react-router-dom";
+
 
 const Headline = () => {
   return (
     <div>
-        <nav className="navbar navbar-expand-sm " dir="ltr" style={{backgroundColor: '#e9ecef'}}>
-      <a className="navbar-brand" href="#">
-        LawMarket
-      </a>
+        <nav className="navbar navbar-expand-sm " dir="ltr" style={{backgroundColor: '#e9ecef', alignItems:'baseline'}}>
+      <Link to="/" className="navbar-brand" >
+      <p>
+          LAW<b>MARKET</b>
+          </p>
+      </Link>
       <button
         className="navbar-toggler"
         type="button"
@@ -23,9 +27,9 @@ const Headline = () => {
             </a>
           </li>
           <li className="nav-item">
-            <a className="nav-link" href="#">
+            <Link to='/login' className="nav-link" href="#">
               התחבר
-            </a>
+            </Link>
           </li>
         </ul>
       </div>
