@@ -1,4 +1,6 @@
 import React from 'react';
+import { Link } from "react-router-dom";
+
 import './Lawyers.css';
 import image from "./userpic.jpeg";
 
@@ -39,7 +41,7 @@ const LawyersCards = () => {
                     </div>
                     <div className="layer-details">
                     <ul className="lawyer-details_ul">
-                    <li className="lawyer-name" ><a href="#">יוסי עזריה</a></li>
+                    <li className="lawyer-name" ><Link to="/lawyeritem" href="#">יוסי עזריה</Link></li>
                         <li className="lawyer-know"> עו״ד לדיני עבודה </li>
                         <li className="lawyer-price">עלות שירות: <a href="#">100$</a> </li>
                     </ul>
