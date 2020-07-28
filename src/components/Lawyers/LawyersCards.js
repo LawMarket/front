@@ -5,30 +5,6 @@ import './Lawyers.css';
 import image from "./userpic.jpeg";
 
 
-const lawyers = [
-    {
-        lawyerName:'יאיר',
-        lawyerKnow:'דיני עבודה',
-        lawyerPrice:'100',
-        layerPic:'',
-        skils:['הבראה','פנסייה', 'נסיעות', 'פיצויים']
-    },
-    {
-        lawyerName:'יאיר',
-        lawyerKnow:'דיני עבודה',
-        lawyerPrice:'100',
-        layerPic:'',
-        skils:['הבראה','פנסייה', 'נסיעות', 'פיצויים']
-    },
-    {
-        lawyerName:'יאיר',
-        lawyerKnow:'דיני עבודה',
-        lawyerPrice:'100',
-        layerPic:'',
-        skils:['הבראה','פנסייה', 'נסיעות', 'פיצויים']
-    },
-];
-
 const LawyersCards = () => {
     return (
         <div className="container-fluid layers-card-container" >

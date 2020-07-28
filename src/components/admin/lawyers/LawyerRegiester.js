@@ -1,21 +1,22 @@
 import React, { Fragment, useState } from "react";
 import { Link, Redirect } from "react-router-dom";
-import { setAlert } from '../../actions/alert'
-import { register} from '../../actions/auth';
+import { setAlert } from '../../../actions/alert'
+import { lawyerRegister } from '../../../actions/admin';
 
 import { connect } from "react-redux";
 
-const Register = ({ setAlert, register, isAuthenticated }) => {
+const LawyerRegiester = ({ setAlert, lawyerRegister, admin }) => {
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
     email: "",
+    lawyerPic:"",
     phoneNumber: "",
     password: "",
     password2: "",
   });
 
-  const { firstName, lastName, email, password, password2, phoneNumber } = formData;
+  const { firstName, lastName, email, password, password2, lawyerPic, phoneNumber } = formData;
 
   const onChange = (e) =>
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -25,25 +26,32 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
     if (password !== password2) {
       setAlert('the password dosnt matched', 'danger' , 5000);
     } else {
-      register(formData);
+        lawyerRegister(formData);
+        setAlert('The Lawyer created successfully', 'success' , 5000);
+        setFormData({
+            firstName: "",
+            lastName: "",
+            email: "",
+            lawyerPic:"",
+            phoneNumber: "",
+            password: "",
+            password2: "",
+        });
     } 
     }
 
-  if (isAuthenticated) {
-    return <Redirect to='/dashboard'/>
-  }
+    /* if (!admin) {
+        return <Redirect to='/'/>
+    } */
+  
 
   return (
     <div class="container">
-      <form class="row justify-content-center mb-5 mt-4" onSubmit={e =>onSubmit(e)}>
+      <form class="row justify-content-center mb-5 mt-5" onSubmit={e =>onSubmit(e)}>
         <div class="col-12 col-md-8 col-lg-8 col-xl-6">
           <div class="row">
             <div class="col text-center">
-              <h1>הרשמה</h1>
-              <p class="text-h3">
-                הצטרף למאגר עורכי הדין הגדול בארץ, עורכי דין מכל התחומים ובכל
-                זמן
-              </p>
+              <h1>הוסף עו״ד למאגר</h1>
             </div>
           </div>
           <div class="row align-items-center mt-4">
@@ -124,11 +132,9 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
                 class="btn btn-primary mt-4 d-block"
                 style={{ backgroundColor: " #08b9e3", borderColor: " #08b9e3" }}
               >
-                הירשם
+                  שלח
               </button>
-              <p className="my-1">
-              יש לך חשבון ? <Link to="/register">התחבר</Link>
-            </p>
+            
             </div>
           </div>
         </div>
@@ -139,7 +145,7 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
 
 
 const mapStateToProps = state => ({
-  isAuthenticated: state.auth.isAuthenticated
+  admin: state.auth.admin
 });
 
-export default connect(mapStateToProps, { setAlert, register })(Register);
+export default connect(mapStateToProps, { setAlert, lawyerRegister })(LawyerRegiester);
