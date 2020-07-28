@@ -1,14 +1,25 @@
 import React from 'react';
 import Headline from "./Headline";
+import { connect } from "react-redux";
+
 import Navbar from "./Navbar";
 
-const Header = () => {
+const Header = ({ admin }) => {
+
+    if (admin) {
+        console.log('okay')
+    }
     return (
         <div>
             <Headline />
-            <Navbar />
+            {admin ? '' : <Navbar />}
+            
         </div>
     )
 }
 
-export default Header;
+const mapStateToProps = state => ({
+    admin: state.auth.admin
+});
+
+export default connect(mapStateToProps)(Header);
