@@ -32,22 +32,22 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
   if (isAuthenticated) {
     return <Redirect to='/dashboard'/>
   }
-
+//col-12 col-md-8 col-lg-8 col-xl-6
   return (
-    <div class="container">
-      <form class="row justify-content-center mb-5 mt-4" onSubmit={e =>onSubmit(e)}>
-        <div class="col-12 col-md-8 col-lg-8 col-xl-6">
-          <div class="row">
-            <div class="col text-center">
+    <div className="container">
+      <form className="row justify-content-center mb-5 mt-4" onSubmit={e =>onSubmit(e)}>
+        <div className="card p-4">
+          <div className="row">
+            <div className="col text-center">
               <h1>הרשמה</h1>
-              <p class="text-h3">
+              <p className="text-h3">
                 הצטרף למאגר עורכי הדין הגדול בארץ, עורכי דין מכל התחומים ובכל
                 זמן
               </p>
             </div>
           </div>
-          <div class="row align-items-center mt-4">
-            <div class="col">
+          <div className="row align-items-center mt-4">
+            <div className="col">
               <input
                 type="text"
                 placeholder="שם פרטי"
@@ -57,7 +57,7 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
                 className="form-control"
               />
             </div>
-            <div class="col">
+            <div className="col">
               <input
                 type="text"
                 placeholder="שם משפחה"
@@ -68,8 +68,8 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
               />
             </div>
           </div>
-          <div class="row align-items-center mt-4">
-            <div class="col">
+          <div className="row align-items-center mt-4">
+            <div className="col">
               <input
                 placeholder='כתובת הדוא"ל'
                 name="email"
@@ -81,8 +81,8 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
               />
             </div>
           </div>
-          <div class="row align-items-center mt-4">
-            <div class="col">
+          <div className="row align-items-center mt-4">
+            <div className="col">
               <input
                 placeholder="מספר טלפון"
                 name="phoneNumber"
@@ -94,11 +94,11 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
               />
             </div>
           </div>
-          <div class="row align-items-center mt-4">
-            <div class="col">
+          <div className="row align-items-center mt-4">
+            <div className="col">
               <input
                 type="password"
-                class="form-control"
+                className="form-control"
                 placeholder="Password"
                 placeholder="הזן סיסמא"
                 name="password"
@@ -106,22 +106,22 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
                 onChange={(e) => onChange(e)}
               />
             </div>
-            <div class="col">
+            <div className="col">
               <input
                 type="password"
                 placeholder="חזור על הסיסמא"
                 name="password2"
                 value={password2}
                 onChange={(e) => onChange(e)}
-                class="form-control"
+                className="form-control"
               />
             </div>
           </div>
-          <div class="row justify-content-start mt-4">
-            <div class="col">
+          <div className="row justify-content-start mt-4">
+            <div className="col">
               <button
               type="submit"
-                class="btn btn-primary mt-4 d-block"
+              className="btn btn-primary mt-4 d-block"
                 style={{ backgroundColor: " #08b9e3", borderColor: " #08b9e3" }}
               >
                 הירשם

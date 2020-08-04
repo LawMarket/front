@@ -5,7 +5,7 @@ import { lawyerRegister } from '../../../actions/admin';
 
 import { connect } from "react-redux";
 
-const LawyerRegiester = ({ setAlert, lawyerRegister, admin }) => {
+const LawyerRegiester = ({ setAlert, lawyerRegister, auth: {isAuthenticated, user, lawyer} }) => {
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -40,10 +40,9 @@ const LawyerRegiester = ({ setAlert, lawyerRegister, admin }) => {
     } 
     }
 
-    /* if (!admin) {
-        return <Redirect to='/'/>
-    } */
-  
+    if (!isAuthenticated || user || lawyer) {
+      return <Redirect to="/" />
+    }
 
   return (
     <div class="container">
@@ -145,7 +144,7 @@ const LawyerRegiester = ({ setAlert, lawyerRegister, admin }) => {
 
 
 const mapStateToProps = state => ({
-  admin: state.auth.admin
+  auth: state.auth
 });
 
 export default connect(mapStateToProps, { setAlert, lawyerRegister })(LawyerRegiester);

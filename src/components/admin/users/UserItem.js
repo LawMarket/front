@@ -1,9 +1,13 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
+
 
 const UserItem = ({
-  user: { _id, firstName, lastName, email, phoneNumber}
+  user: { _id, firstName, lastName, email, phoneNumber},
 }) => {
+
+
+  
   return (
     <div className="lw-card card1">
       <div className="card-head">
@@ -30,5 +34,7 @@ const UserItem = ({
 
 );
 };
+
+
 
 export default UserItem;

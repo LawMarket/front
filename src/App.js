@@ -13,6 +13,12 @@ import LawyerList from '../src/components/Lawyers/LawyersList';
 import Login from '../src/components/auth/Login';
 import UsersList from './components/admin/users/UsersList';
 import LawyerRegiester from './components/admin/lawyers/LawyerRegiester';
+import LawyerCreateProfile from './components/admin/lawyers/LawyerCreateProfile';
+import LawyerEditProfile from './components/admin/lawyers/LawyerEditProfile';
+import LawyerDashboard from './components/admin/lawyers/LawyerDashboard';
+import AdminEditLawyer from './components/admin/lawyers/AdminEditLawyer';
+import LawyersTable from './components/admin/lawyers/LawyersTable';
+import UserTable from './components/admin/users/UserTable';
 import UserItem from './components/admin/users/UserItem';
 import setAuthToken from './utills/setAuthToken';
 import { loadUser } from './actions/auth'
@@ -40,14 +46,20 @@ const App = () => {
         <section className="App">
           <Alert />
           <Switch>
+            <Route exact path="/admineditlawyer/:id" component={AdminEditLawyer} />
             <Route exact path="/lawyeritem/:id" component={LawyerItem} />
             <Route exact path="/lawyerregiester" component={LawyerRegiester} />
+            <Route exact path="/usertable" component={UserTable} />
+            <Route exact path="/lawyerstable" component={LawyersTable} />
             <Route exact path="/userslist" component={UsersList} />
             <Route exact path="/usersitem" component={UserItem} />
             <Route exact path="/register" component={Register} />
             <Route exact path="/lawyerList" component={LawyerList} />
             <Route exact path="/dashboard" component={Dashboard} />
             <Route exact path="/login" component={Login} />
+            <Route exact path="/lawyercreateprofile" component={LawyerCreateProfile} />
+            <Route exact path="/lawyereditprofile" component={LawyerEditProfile} />
+            <Route exact path="/lawyerdashboard" component={LawyerDashboard} />
           </Switch>
         </section>
         <Route exact path="/" component={LawyersCards} />

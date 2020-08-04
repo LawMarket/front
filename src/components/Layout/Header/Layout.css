@@ -29,6 +29,22 @@
     color:black
 }
 
+.nav-link{
+    color: #fff;
+}
+
+.nav-link a{
+    color: #fff;
+}
+
+
+.home-page{
+    background-image: url("../../../images/headpic2.jpeg");
+    background-repeat:no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
 @media only screen and (max-width: 768px) {
     /* For mobile phones: */
     .logo{

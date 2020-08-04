@@ -1,85 +1,43 @@
-import React from 'react';
+import React, { useEffect, Fragment } from "react";
 import { Link } from "react-router-dom";
+import { connect } from "react-redux";
+import { getAllLawyers } from "../../actions/admin";
+import Spinner from "../Layout/Header/Spinner";
+import LawyerCard from "./LawyerCard";
 
-import './Lawyers.css';
-import image from "./userpic.jpeg";
+import "./Lawyers.css";
 
+const LawyersCards = ({ getAllLawyers, profile: { profiles, loading } }) => {
+  useEffect(() => {
+    getAllLawyers();
+  }, [getAllLawyers]);
 
-const LawyersCards = () => {
-    return (
-        <div className="container-fluid layers-card-container" >
+  return (
+    <Fragment>
+      {loading ? (
+        <Spinner />
+      ) : (
+        <Fragment>
+          <div className="container-fluid layers-card-container">
             <h3 className="text-center lawyers-title">עורכי הדין שלנו</h3>
             <div className="cards-container row justify-content-center">
-            <div className="col-2 lawyer-item">
-                <div className="lawyer-card-header row">
-                    <div className="image-container">
-                        <img src={image} className="rounded-circle" width='70px' height='70px'/>
-                    </div>
-                    <div className="layer-details">
-                    <ul className="lawyer-details_ul">
-                    <li className="lawyer-name" ><Link to="/lawyeritem" href="#">יוסי עזריה</Link></li>
-                        <li className="lawyer-know"> עו״ד לדיני עבודה </li>
-                        <li className="lawyer-price">עלות שירות: <a href="#">100$</a> </li>
-                    </ul>
-                    </div>
-                </div>
-                <div className="lawyer-skils">
-                    <ul className="lawyer-skils_ul">
-                        <li>דמי הבראה</li>
-                        <li>פנסיה</li>
-                        <li>נסיעות</li>
-                    </ul>
-                </div>
-                <a href="#"> עוד</a>
+              {profiles.length > 0 ? (
+                profiles.map((profile) => (
+                  <LawyerCard key={profile._id} profile={profile} />
+                ))
+              ) : (
+                <h4>לא נמצאו עורכי דין </h4>
+              )}
             </div>
-            <div className="col-2 lawyer-item">
-            <div className="lawyer-card-header row">
-                    <div className="image-container">
-                    <img src={image} className="rounded-circle" width='70px' height='70px'/>
-                    </div>
-                    <div className="layer-details">
-                    <ul className="lawyer-details_ul">
-                    <li className="lawyer-name" ><a href="#">יוסי עזריה</a></li>
-                        <li className="lawyer-know"> עו״ד לדיני עבודה </li>
-                        <li className="lawyer-price">עלות שירות: <a href="#">100$</a> </li>
-                    </ul>
-                    </div>
-                </div>
-                <div className="lawyer-skils">
-                    <ul className="lawyer-skils_ul">
-                        <li>דמי הבראה</li>
-                        <li>פנסיה</li>
-                        <li>נסיעות</li>
-                    </ul>
-                </div>
-                <a href="#"> עוד</a>
-            </div>
-            <div className="col-2 lawyer-item">
-                   <div className="lawyer-card-header row">
-                    <div className="image-container">
-                    <img src={image} className="rounded-circle" width='70px' height='70px'/>
-                    </div>
-                    <div className="layer-details">
-                    <ul className="lawyer-details_ul">
-                        <li className="lawyer-name" ><a href="#">יוסי עזריה</a></li>
-                        <li className="lawyer-know"> עו״ד לדיני עבודה </li>
-                        <li className="lawyer-price">עלות שירות: <a href="#">100$</a> </li>
-                    </ul>
-                       
-                    </div>
-                </div>
-                <div className="lawyer-skils">
-                    <ul className="lawyer-skils_ul">
-                        <li>דמי הבראה</li>
-                        <li>פנסיה</li>
-                        <li>נסיעות</li>
-                    </ul>
-                </div>
-                <a href="#"> עוד</a>
-            </div>
-            </div>
-        </div>
-    )
-}
+          </div>
+        </Fragment>
+      )}
+    </Fragment>
+  );
+};
 
-export default LawyersCards;
+const mapStateToProps = (state) => ({
+  profile: state.profile,
+});
+
+export default connect(mapStateToProps, { getAllLawyers })(LawyersCards);

@@ -7,16 +7,17 @@ import Spinner from '../../Layout/Header/Spinner'
 import UserItem from './UserItem';
 
 
- const UsersList = ({ getAllUsers, usersList: { users, loading }, admin, lawyer}) => {
+ const UsersList = ({ getAllUsers, usersList: { users, loading }, auth :{isAuthenticated, user}
+ }) => {
     useEffect(() => {getAllUsers()}, [getAllUsers])
-   /*  if (!admin || !lawyer) {
-        return <Redirect to='/' />
-    } */
-    console.log(users)
+
+    if (!isAuthenticated || user) {
+        return <Redirect to="/" />
+      }
     return (
-        <Fragment>
+        <div style={{minHeight:'100vh'}}>
          { loading ? <Spinner /> : <Fragment>
-            <h1 className="mb-3 text-center">משתמשים</h1>
+            <h1 className="mb-5 text-center">משתמשים</h1>
            
             <div className="lw-wrapper row">
                 {users.length > 0 ? (
@@ -26,14 +27,14 @@ import UserItem from './UserItem';
                  ) : <h4>לא נמצאו עובדים..</h4>}
             </div>
             </Fragment>}  
-    </Fragment>
+    </div>
     )
 }
 
 
 const mapStateToProps = state => ({
     usersList: state.admin,
-    admin: state.auth.admin
+    auth: state.auth
 });
 
 

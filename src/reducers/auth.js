@@ -8,7 +8,8 @@ import {
        LOGIN_OUT,
        ACCOUNT_DELETE,
        ADMIN_LOADED,
-       LAWYER_LOADED
+       LAWYER_LOADED,
+       DELETE_ERROR
     } from '../actions/types';
 
 const initalState= {
@@ -17,7 +18,8 @@ const initalState= {
     loading: true,
     user: null,
     admin:null,
-    lawyer:null
+    lawyer:null,
+    error:{}
 };
 
 export default function(state = initalState, action) {
@@ -44,7 +46,7 @@ const { type, payload } = action;
                     ...state,
                     isAuthenticated:true,
                     loading: false,
-                    user: payload
+                    //user: payload
                 }
         case REGISTER_SUCCESS:
         case LOGIN_SUCCESS:
@@ -67,6 +69,12 @@ const { type, payload } = action;
                 isAuthenticated:false,
                 loading: false
             }
+        case DELETE_ERROR:
+                return {
+                    ...state,
+                    error: payload,
+                    loading: false
+                }
         default:
             return state;
     }

@@ -20,6 +20,21 @@ export const getCurrentProfile = () => async dispatch =>{
 }
 
 
+export const getCurrentProfileby = (lawyer_id) => async dispatch =>{
+  try {
+      const res = await axios.get(`/api/profile/me/${lawyer_id}`)
+  dispatch({
+      type: GET_PROFILE,
+      payload: res.data
+  });
+  } catch (err) {
+      dispatch({
+           type: PROFILE_ERROR,
+           payload: {msg: err.response.statusText, status: err.response.status}
+      })
+  }
+}
+
 export const getProfiles = () => async dispatch =>{
   try {
       const res = await axios.get('/api/profile/allProfiles')
@@ -37,29 +52,12 @@ export const getProfiles = () => async dispatch =>{
 };
 
 
-export const getProfileById = userId => async dispatch =>{
+export const getProfileById = lawyerId => async dispatch =>{
   try {
-      const res = await axios.get(`/api/profile/user/${userId}`)
+      const res = await axios.get(`/api/admin/edit-by-id/${lawyerId}`)
 
   dispatch({
       type: GET_PROFILE,
-      payload: res.data
-  });
-  } catch (err) {
-      dispatch({
-           type: PROFILE_ERROR,
-           payload: {msg: err.response.statusText, status: err.response.status}
-      })
-  }
-};
-
-
-export const getGithubRepos = username => async dispatch =>{
-  try {
-      const res = await axios.get(`/api/profile/github/${username}`)
-
-  dispatch({
-      type: GET_REPOS,
       payload: res.data
   });
   } catch (err) {
@@ -91,10 +89,10 @@ export const createProfile = (
         payload: res.data
       });
   
-      dispatch(setAlert(edit ? 'Profile Updated' : 'Profile Created', 'success'));
+      dispatch(setAlert(edit ? 'הפרופיל עודכן' : 'הפרופיל נוצר', 'success'));
   
       if (!edit) {
-        history.push('/dashboard');
+        history.push('/lawyerdashboard');
       }
     } catch (err) {
       const errors = err.response.data.errors;

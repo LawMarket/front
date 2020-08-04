@@ -1,4 +1,4 @@
-import { PROFILE_ERROR, GET_PROFILE, UPDATE_PROFILE, CLEAR_PROFILE, GET_PROFILES, GET_REPOS } from '../actions/types';
+import { PROFILE_ERROR, GET_PROFILE, UPDATE_PROFILE, CLEAR_PROFILE, GET_PROFILES, GET_REPOS, ADMIN_DELETE_LAWYER } from '../actions/types';
 
 const initialState = {
     profile: null,
@@ -18,7 +18,6 @@ export default function (state = initialState, action) {
                 ...state,
                 profile: payload,
                 loading: false,
-
             };
         case GET_PROFILES:
             return {
@@ -36,6 +35,12 @@ export default function (state = initialState, action) {
             return {
                 ...state,
                 profile: null,
+                loading: false
+            }
+        case ADMIN_DELETE_LAWYER:
+            return {
+                ...state,
+                profiles: state.profiles.filter(lawyer => lawyer._id !== payload),
                 loading: false
             }
         case GET_REPOS:
