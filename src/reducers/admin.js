@@ -1,10 +1,11 @@
-import { GET_USERS,USERS_ERROR, LAWYERS_REGISTER_FAIL, LAWYERS_REGISTER_SUCCESS } from "../actions/types";
+import { GET_USERS,USERS_ERROR, LAWYERS_REGISTER_FAIL, LAWYERS_REGISTER_SUCCESS, ADMIN_DELETE_USER,ADMIN_DELETE_LAWYER } from "../actions/types";
 
 const initalState = {
   /*  token: localStorage.getItem('token'),
     isAuthenticated: null,
     loading: true,
     admin:null */
+    error:{},
   user: null,
   users: [],
   loading: true,
@@ -29,6 +30,12 @@ export default function (state = initalState, action) {
      case LAWYERS_REGISTER_SUCCESS:
                 return {
                     ...state,
+                }
+     case ADMIN_DELETE_USER:
+                return {
+                    ...state,
+                    users: state.users.filter(user => user._id !== payload),
+
                 }
         /* case REGISTER_SUCCESS:
         case LOGIN_SUCCESS:

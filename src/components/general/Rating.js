@@ -15,7 +15,7 @@ const Rating = () => {
             <span className="fa fa-star" style={style}></span>
         </div>
         <div>
-        <p style={{fontSize: 'x-small'}}>( 12 תגובות )</p>
+        <p style={{fontSize: 'x-small'}}>( 0 תגובות )</p>
         </div>
     </div>
   );

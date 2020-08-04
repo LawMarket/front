@@ -1,24 +1,27 @@
-import React, { Fragment } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { logout } from "../../../actions/auth";
-import Lawyer from "../../Lawyers/Lawyer";
+
+import './Layout.css'
 
 const Headline = ({ auth: { isAuthenticated, loading, admin, lawyer }, logout }) => {
+ 
+
   const authLinks = (
-    <ul className="navbar-nav" style={{ display: "contents" }}>
-      <li className="nav-item">
+    <ul className="navbar-link" style={{ display: "contents" }}>
+      <li className="nav-link">
         <Link className="nav-link" to="lawyerlist">
           עורכי דין
         </Link>
       </li>
-      <li>
+      <li className="nav-link">
         <Link to="/dashboard">
           <i className="fas fa-user"></i>{" "}
           <span className="hide-sm">איזור אישי</span>
         </Link>
       </li>
-      <li className="nav-item">
+      <li className="nav-link">
         <a onClick={logout} href="#!">
           <i className="fas fa-sign-out-alt"></i>{" "}
           <span className="hide-sm">התנתק</span>
@@ -29,12 +32,17 @@ const Headline = ({ auth: { isAuthenticated, loading, admin, lawyer }, logout })
 
   const guestLinks = (
     <ul className="navbar-nav">
-      <li className="nav-item">
+        <li className="nav-link">
         <Link className="nav-link" to="lawyerlist">
           עורכי דין
         </Link>
       </li>
-      <li className="nav-item">
+      <li className="nav-link">
+        <Link to="/register" className="nav-link" href="#">
+          הרשמה
+        </Link>
+      </li>
+      <li className="nav-link">
         <Link to="/login" className="nav-link" href="#">
           התחבר
         </Link>
@@ -44,24 +52,24 @@ const Headline = ({ auth: { isAuthenticated, loading, admin, lawyer }, logout })
 
   const adminLinks = (
     <ul className="navbar-nav" style={{ display: "contents" }}>
-      <li className="nav-item">
-        <Link className="nav-link" to="lawyerlist">
+      <li className="nav-link">
+        <Link  to="/lawyerstable">
           עורכי דין
         </Link>
       </li>
-      <li>
-        <Link to="/userslist">
+      <li className="nav-link">
+        <Link to="/usertable">
           <i className="fas fa-user"></i>{" "}
           <span className="hide-sm">משתמשים</span>
         </Link>
       </li>
-      <li>
+      <li className="nav-link">
         <Link to="/lawyerregiester">
           <i className="fas fa-user"></i>{" "}
           <span className="hide-sm">הוסף עו״ד</span>
         </Link>
       </li>
-      <li className="nav-item">
+      <li className="nav-link">
         <a onClick={logout} href="#!">
           <i className="fas fa-sign-out-alt"></i>{" "}
           <span className="hide-sm">התנתק</span>
@@ -72,14 +80,23 @@ const Headline = ({ auth: { isAuthenticated, loading, admin, lawyer }, logout })
 
   const lawyerLinks = (
     <ul className="navbar-nav" style={{ display: "contents" }}>
-      <li>
+      <li className="nav-link">
+        <Link to="/">
+          <span className="hide-sm">בקשות עבודה</span>
+        </Link>
+      </li>
+      <li className="nav-link">
         <Link to="/userslist">
           <i className="fas fa-user"></i>{" "}
           <span className="hide-sm">משתמשים</span>
         </Link>
       </li>
-
-      <li className="nav-item">
+      <li className="nav-link">
+        <Link to="/lawyerdashboard">
+          <span className="hide-sm">איזור אישי</span>
+        </Link>
+      </li>
+      <li className="nav-link">
         <a onClick={logout} href="#!">
           <i className="fas fa-sign-out-alt"></i>{" "}
           <span className="hide-sm">התנתק</span>
@@ -91,15 +108,15 @@ const Headline = ({ auth: { isAuthenticated, loading, admin, lawyer }, logout })
 
 
   return (
-    <div>
+    <div className="home-page">
       <nav
         className="navbar navbar-expand-sm "
         dir="ltr"
-        style={{ backgroundColor: "#e9ecef", alignItems: "baseline" }}
+        style={{ alignItems: "baseline" }}
       >
         {!admin ? (
           <Link to="/" className="navbar-brand">
-            <p>
+            <p style={{color:'#fff'}}>
               LAW<b>MARKET</b>
             </p>
           </Link>
@@ -110,6 +127,7 @@ const Headline = ({ auth: { isAuthenticated, loading, admin, lawyer }, logout })
           </p>
         )}
         <button
+        style={{backgroundColor:'#fff'}}
           className="navbar-toggler"
           type="button"
           data-toggle="collapse"
@@ -128,14 +146,14 @@ const Headline = ({ auth: { isAuthenticated, loading, admin, lawyer }, logout })
           
         </div>
       </nav>
-      {!admin ? (
-        <div className="jumbotron text-center" style={{ marginBottom: 0 }}>
-          <h1>עורכי הדין הטובים בתחום במקום אחד</h1>
+      {admin || lawyer ? (<div></div>) : (
+        <div className="jumbotron text-center" style={{ marginBottom: 0, backgroundColor: 'transparent'}}>
+          <h1 style={{color:'#fff'}}>עורכי הדין הטובים בתחום במקום אחד</h1>
           <div className="input-group" style={{ flexDirection: "row-reverse" }}>
             <input
               type="text"
               className="form-control"
-              placeholder="Search this blog"
+              placeholder="חפש את התחום שאתה צריך"
             />
             <div className="input-group-append">
               <button className="btn btn-secondary" type="button">
@@ -144,8 +162,6 @@ const Headline = ({ auth: { isAuthenticated, loading, admin, lawyer }, logout })
             </div>
           </div>
         </div>
-      ) : (
-        <div></div>
       )}
     </div>
   );

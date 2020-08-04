@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const Lawyer = ({
-  lawyer: { _id, lawyerName, lawyerKnow, lawyerPrice, layerPic, skils },
+  profile: {lawyerKnow, lawyerPrice, layerPic, skils, lawyer:{_id , firstName, lastName} },
 }) => {
   return (
     <div className="lw-card card1">
@@ -10,7 +10,7 @@ const Lawyer = ({
         <div className="lw-image"></div>
       </div>
       <div className="lw-about">
-        <h1>{lawyerName}</h1>
+        <h1>{`${firstName} ${lastName}`}</h1>
         <p className="lw-title">{lawyerKnow}</p>
         <Link to={`/lawyeritem/${_id}`}>
           <button

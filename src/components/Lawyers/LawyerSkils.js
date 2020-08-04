@@ -1,9 +1,16 @@
 import React from "react";
+import { Link } from 'react-router-dom';
 
-const LawyerSkils = () => {
+const LawyerSkils = ({lawyer :{firstName, lastName}, admin, lawyerKnow}) => {
+  const goBack = admin ? 'lawyerstable': 'lawyerlist';
   return (
     <div className="lawyer-skils-container col-8">
-      <h5 className="mb-3 text-right">נושאים בהם עו״ד יוספה מתמצאת הכי טוב</h5>
+      <div className="row justify-content-between mb-2">
+      <h5 className="mb-3 text-right">נושאים בהם עו״ד {`${firstName} ${lastName}`} מתמצא הכי טוב</h5>
+      <Link to={`/${goBack}`} className='btn btn-light'>
+        חזור אחורה
+          </Link>
+      </div>
       <div className="row">
         <div class="Lawyer-card-skils mb-3 ml-3">
           <div class="Lawyer-card-inner">

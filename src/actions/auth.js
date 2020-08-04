@@ -30,13 +30,13 @@ export const loadUser = () => async dispatch => {
         type: ADMIN_LOADED,
         payload: res.data
       });
-    }else if(res.data.isLawyer){
+    }if(res.data.isLawyer){
       dispatch({
         type: LAWYER_LOADED,
         payload: res.data
       });
     }
-    else{
+    else if(!res.data.isLawyer || !res.data.isAdmin) {
       dispatch({
         type: USER_LOADED,
         payload: res.data
@@ -117,3 +117,4 @@ export const logout = () => dispatch =>{
   });
   return <Redirect to="/"/>
 };
+

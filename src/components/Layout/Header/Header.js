@@ -4,22 +4,20 @@ import { connect } from "react-redux";
 
 import Navbar from "./Navbar";
 
-const Header = ({ admin }) => {
 
-    if (admin) {
-        console.log('okay')
-    }
+const Header = ({auth:{admin, lawyer} }) => {
+
+   
     return (
         <div>
             <Headline />
-            {admin ? '' : <Navbar />}
-            
+            {admin || lawyer ? '' : <Navbar />}
         </div>
     )
 }
 
 const mapStateToProps = state => ({
-    admin: state.auth.admin
+    auth: state.auth
 });
 
 export default connect(mapStateToProps)(Header);
