@@ -136,7 +136,7 @@ const Headline = ({ auth: { isAuthenticated, loading, admin, lawyer }, logout })
           <span className="navbar-toggler-icon"></span>
         </button>
         <div
-          className="collapse navbar-collapse"
+          className="collapse navbar-collapse text-right"
           id="collapsibleNavbar"
           style={{ justifyContent: "flex-end" }}
         >
@@ -156,8 +156,8 @@ const Headline = ({ auth: { isAuthenticated, loading, admin, lawyer }, logout })
               placeholder="חפש את התחום שאתה צריך"
             />
             <div className="input-group-append">
-              <button className="btn btn-secondary" type="button">
-                <i className="fa fa-search"></i>
+              <button className="btn btn-secondary" type="button" style={{backgroundColor:'#ffff', borderColor:'#ffff'}}>
+                <i className="fa fa-search" style={{color:'black'}}></i>
               </button>
             </div>
           </div>

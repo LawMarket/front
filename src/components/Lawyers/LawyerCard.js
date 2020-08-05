@@ -23,13 +23,13 @@ const LawyerCard = ({
       <div className="layer-details">
         <ul className="lawyer-details_ul">
           <li className="lawyer-name">
-            <Link to={`/lawyeritem/${_id}`} >
+            <Link to={`/lawyeritem/${_id}`} className="lawyer-link-color">
             {`${firstName} ${lastName}`}
             </Link>
           </li>
           <li className="lawyer-know"> {`עו״ד ל${lawyerKnow}`} </li>
           <li className="lawyer-price">
-            עלות שירות: <a href="#">100$</a>{" "}
+            עלות שירות: <a style={{color: '#08b9e3'}}>100$</a>{" "}
           </li>
         </ul>
       </div>
@@ -41,7 +41,7 @@ const LawyerCard = ({
         ))}
       </ul>
     </div>
-    <Link to={`/lawyeritem/${_id}`}> עוד</Link>
+    <Link to={`/lawyeritem/${_id}`} className="lawyer-link-color"> עוד</Link>
   </div>
   );
 };

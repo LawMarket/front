@@ -1,6 +1,5 @@
 import React, { Fragment } from "react";
 import { connect } from "react-redux";
-import Spinner from './Spinner';
 
 import "./Layout.css";
 
@@ -16,7 +15,7 @@ const Footer = ({auth:{admin}}) => {
           className="about col-4"
           >
           <p>
-          מה כותבים בעיתונות?&ensp; עלינו &ensp; צור קשר
+          מה כותבים בעיתונות&ensp; עלינו &ensp; צור קשר
           </p>
         </div>
         <div

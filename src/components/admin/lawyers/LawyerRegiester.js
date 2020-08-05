@@ -1,22 +1,34 @@
 import React, { Fragment, useState } from "react";
 import { Link, Redirect } from "react-router-dom";
-import { setAlert } from '../../../actions/alert'
-import { lawyerRegister } from '../../../actions/admin';
+import { setAlert } from "../../../actions/alert";
+import { lawyerRegister } from "../../../actions/admin";
 
 import { connect } from "react-redux";
 
-const LawyerRegiester = ({ setAlert, lawyerRegister, auth: {isAuthenticated, user, lawyer} }) => {
+const LawyerRegiester = ({
+  setAlert,
+  lawyerRegister,
+  auth: { isAuthenticated, user, lawyer },
+}) => {
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
     email: "",
-    lawyerPic:"",
+    lawyerPic: "",
     phoneNumber: "",
     password: "",
     password2: "",
   });
 
-  const { firstName, lastName, email, password, password2, lawyerPic, phoneNumber } = formData;
+  const {
+    firstName,
+    lastName,
+    email,
+    password,
+    password2,
+    lawyerPic,
+    phoneNumber,
+  } = formData;
 
   const onChange = (e) =>
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -24,29 +36,32 @@ const LawyerRegiester = ({ setAlert, lawyerRegister, auth: {isAuthenticated, use
   const onSubmit = async (e) => {
     e.preventDefault();
     if (password !== password2) {
-      setAlert('the password dosnt matched', 'danger' , 5000);
+      setAlert("the password dosnt matched", "danger", 5000);
     } else {
-        lawyerRegister(formData);
-        setAlert('The Lawyer created successfully', 'success' , 5000);
-        setFormData({
-            firstName: "",
-            lastName: "",
-            email: "",
-            lawyerPic:"",
-            phoneNumber: "",
-            password: "",
-            password2: "",
-        });
-    } 
+      lawyerRegister(formData);
+      setAlert("The Lawyer created successfully", "success", 5000);
+      setFormData({
+        firstName: "",
+        lastName: "",
+        email: "",
+        lawyerPic: "",
+        phoneNumber: "",
+        password: "",
+        password2: "",
+      });
     }
+  };
 
-    if (!isAuthenticated || user || lawyer) {
-      return <Redirect to="/" />
-    }
+  if (!isAuthenticated || user || lawyer) {
+    return <Redirect to="/" />;
+  }
 
   return (
     <div class="container">
-      <form class="row justify-content-center mb-5 mt-5" onSubmit={e =>onSubmit(e)}>
+      <form
+        class="row justify-content-center mb-5 mt-5"
+        onSubmit={(e) => onSubmit(e)}
+      >
         <div class="col-12 col-md-8 col-lg-8 col-xl-6">
           <div class="row">
             <div class="col text-center">
@@ -125,15 +140,17 @@ const LawyerRegiester = ({ setAlert, lawyerRegister, auth: {isAuthenticated, use
             </div>
           </div>
           <div class="row justify-content-start mt-4">
-            <div class="col">
+            <div class="col" style={{ display: "flex", justifyContent: "center",}}>
               <button
-              type="submit"
+                type="submit"
                 class="btn btn-primary mt-4 d-block"
-                style={{ backgroundColor: " #08b9e3", borderColor: " #08b9e3" }}
+                style={{
+                  backgroundColor: " #08b9e3",
+                  borderColor: " #08b9e3"
+                }}
               >
-                  שלח
+                שלח
               </button>
-            
             </div>
           </div>
         </div>
@@ -142,9 +159,10 @@ const LawyerRegiester = ({ setAlert, lawyerRegister, auth: {isAuthenticated, use
   );
 };
 
-
-const mapStateToProps = state => ({
-  auth: state.auth
+const mapStateToProps = (state) => ({
+  auth: state.auth,
 });
 
-export default connect(mapStateToProps, { setAlert, lawyerRegister })(LawyerRegiester);
+export default connect(mapStateToProps, { setAlert, lawyerRegister })(
+  LawyerRegiester
+);

@@ -20,6 +20,7 @@ import AdminEditLawyer from './components/admin/lawyers/AdminEditLawyer';
 import LawyersTable from './components/admin/lawyers/LawyersTable';
 import UserTable from './components/admin/users/UserTable';
 import UserItem from './components/admin/users/UserItem';
+import PageNotFound from './components/general/PageNotFound';
 import setAuthToken from './utills/setAuthToken';
 import { loadUser } from './actions/auth'
 
@@ -40,7 +41,7 @@ const App = () => {
   return (
     <Provider store={store}>
       <Router>
-    <Fragment>
+      <Fragment>
         <Header />
         <Route exact path="/" component={FlipCard} />
         <section className="App">
@@ -63,7 +64,7 @@ const App = () => {
           </Switch>
         </section>
         <Route exact path="/" component={LawyersCards} />
-        <Footer />
+        <Footer  />
     </Fragment>
       </Router>
     </Provider>

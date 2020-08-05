@@ -20,7 +20,7 @@ const LawyersCards = ({ getAllLawyers, profile: { profiles, loading } }) => {
         <Fragment>
           <div className="container-fluid layers-card-container">
             <h3 className="text-center lawyers-title">עורכי הדין שלנו</h3>
-            <div className="cards-container row justify-content-center">
+            <div className="cards-container row justify-content-center m-0">
               {profiles.length > 0 ? (
                 profiles.map((profile) => (
                   <LawyerCard key={profile._id} profile={profile} />
