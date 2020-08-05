@@ -3,7 +3,7 @@ import './Layout.css';
 
 const Navbar = () => {
   return (
-    <nav className="navbar navbar-expand-sm d-flex justify-content-center">
+    <nav className="navbar navbar-expand-sm d-flex justify-content-center" style={{borderBottom: '0.5px solid #626262', padding: '1rem'}}>
      {/*  <button
         className="navbar-toggler"
         type="button"
@@ -12,7 +12,7 @@ const Navbar = () => {
       >
         <span className="navbar-toggler-icon"></span>
       </button> */}
-      <div className=" justify-content-center">
+      <div className=" justify-content-center" >
         <ul className="navbar-nav nav-class">
           <li className="nav-item dropdown">
             <a  data-toggle="dropdown" href="#">
@@ -20,13 +20,13 @@ const Navbar = () => {
             </a>
             <div className="dropdown-menu">
               <a className="dropdown-item" href="#">
-                Link 1
+                רכוש
               </a>
               <a className="dropdown-item" href="#">
-                Link 2
+               קרקעות
               </a>
               <a className="dropdown-item" href="#">
-                Link 3
+                ירושה
               </a>
             </div>
           </li>
@@ -35,14 +35,14 @@ const Navbar = () => {
               דיני משפחה
             </a>
             <div className="dropdown-menu">
-              <a className="dropdown-item" href="#">
-                Link 1
+              <a className="dropdown-item " href="#">
+                גירושים
               </a>
               <a className="dropdown-item" href="#">
-                Link 2
+                גישורים
               </a>
               <a className="dropdown-item" href="#">
-                Link 3
+                הסכם ממון
               </a>
             </div>
           </li>
@@ -52,13 +52,13 @@ const Navbar = () => {
             </a>
             <div className="dropdown-menu">
               <a className="dropdown-item" href="#">
-                Link 1
+               פיצויים
               </a>
               <a className="dropdown-item" href="#">
-                Link 2
+                פנסייה
               </a>
               <a className="dropdown-item" href="#">
-                Link 3
+               הבראה
               </a>
             </div>
           </li>
@@ -68,13 +68,13 @@ const Navbar = () => {
             </a>
             <div className="dropdown-menu">
               <a className="dropdown-item" href="#">
-                Link 1
+                עבירות תנועה
               </a>
               <a className="dropdown-item" href="#">
-                Link 2
+                תאונות
               </a>
               <a className="dropdown-item" href="#">
-                Link 3
+                ביטוחים
               </a>
             </div>
           </li>
@@ -84,13 +84,13 @@ const Navbar = () => {
             </a>
             <div className="dropdown-menu">
               <a className="dropdown-item" href="#">
-                Link 1
+                חוזה השכרה
               </a>
               <a className="dropdown-item" href="#">
-                Link 2
+                חוזה מכירה
               </a>
               <a className="dropdown-item" href="#">
-                Link 3
+                תמ״א 
               </a>
             </div>
           </li>
@@ -100,13 +100,13 @@ const Navbar = () => {
             </a>
             <div className="dropdown-menu">
               <a className="dropdown-item" href="#">
-                Link 1
+                חובות
               </a>
               <a className="dropdown-item" href="#">
-                Link 2
+                פשיטת רגל
               </a>
               <a className="dropdown-item" href="#">
-                Link 3
+                הנחה בחובות
               </a>
             </div>
           </li>

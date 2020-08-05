@@ -30,6 +30,7 @@
 }
 
 .lawyer-item{
+    padding-left: 1rem;
     padding-bottom: 2rem;
     padding-top: 2rem;
 }
@@ -42,6 +43,10 @@
 
 .lawyer-skils_ul li {
     font-size: small;
+}
+
+.lawyer-link-color{
+    color:#08b9e3;
 }
 
 
@@ -272,6 +277,10 @@ border: 6px solid #fff;
         padding-right: 30px;
         padding-inline-start: 0;
         text-align: right;
+    }
+    .lawyer-item {
+        padding: 3rem;
+     
     }
     
 }

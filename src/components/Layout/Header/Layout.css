@@ -21,8 +21,17 @@
 }
 
 .navbar-nav li{
+    padding-left: 3rem;
     margin: 7px;
     list-style: none;
+}
+
+.dropdown-menu{
+    text-align: right;
+}
+
+.nav-item a{
+    color: #626262;
 }
 .navbar-nav li :hover{
     text-decoration:none;
@@ -39,7 +48,7 @@
 
 
 .home-page{
-    background-image: url("../../../images/headpic2.jpeg");
+    background-image: url("../../../images/headpic3.png");
     background-repeat:no-repeat;
     background-size: cover;
     position: relative;
